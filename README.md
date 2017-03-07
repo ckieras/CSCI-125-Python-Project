@@ -7,3 +7,4 @@ raw= str(txt)
 from bs4 import BeautifulSoup
 
 soup = BeautifulSoup(raw)
+tbl = str(soup.find_all('table')[6])
