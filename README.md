@@ -10,3 +10,17 @@ soup = BeautifulSoup(txt)
 tbl = soup.find_all('table')[6]
 for word in tbl:
   print (tbl.get_text())
+
+ecount=0
+tcount=0
+
+for tr in tbl.find_all('tr')[2:]:
+    tds = tr.find_all('td')
+    print (tds[0].text, tds[1].text, tds[2].text, tds[3].text, tds[4].text)
+    #print tds[3].text
+    if tds[3].text=="E":
+        ecount=ecount+1
+    elif tds[3].text=="T":
+        tcount=tcount+1
+        
+print ecount, tcount
