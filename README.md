@@ -66,7 +66,8 @@ def ecounts():
 def tcounts():
     tcount=0
     for tr in tbl.find_all('tr')[2:]:
-        #tcount=0
+
+#tcount=0
         #print tr
         for td in tr:
             tds = tr.find_all('td')
@@ -94,6 +95,7 @@ print t
 
 
 #Have also tried this and we want the return to be tabbed one less time but the error is that list index is out of range
+
 def ecounttcount():
     ecount=0
     tcount=0
