@@ -8,7 +8,7 @@ txt = urllib.urlopen('http://www.ecfr.gov/cgi-bin/text-idx?rgn=div8&node=50:2.0.
 outf = open('ecfr.txt', 'w')
 #The following writes to a file in your notebook
 outf.write(txt)
-#The following closes a file in your notebook
+t#The following closes a file in your notebook
 outf.close()
 
 raw= str(txt)
@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup(open('ecfr.txt','r'))
 tbl = (soup.find_all('table')[6])
 for word in tbl:
-    newtext=word.get_text()
+     newtext=word.get_text()
 
 
 ecount=0
@@ -28,7 +28,7 @@ for tr in tbl.find_all('tr')[2:]:
     #print tr
     for td in tr:
         tds = tr.find_all('td')
-        (tds[0].text).encode('utf-8') 
+t        (tds[0].text).encode('utf-8') 
         (tds[1].text).encode('utf-8') 
         (tds[2].text).encode('utf-8') 
         (tds[3].text).encode('utf-8')
@@ -38,7 +38,7 @@ for tr in tbl.find_all('tr')[2:]:
         elif tds[3].text=="T":
             tcount=tcount+1
     print ecount, tcount
-    
+u    
 #The below is still very buggy
 
 def ecounts():
@@ -48,7 +48,7 @@ def ecounts():
         for td in tr:
             tds = tr.find_all('td')
             (tds[0].text).encode('utf-8') 
-            (tds[1].text).encode('utf-8') 
+b            (tds[1].text).encode('utf-8') 
             (tds[2].text).encode('utf-8') 
             (tds[3].text).encode('utf-8')
             (tds[4].text).encode('utf-8')
@@ -58,7 +58,7 @@ def ecounts():
                 elif tds[3].text=="T":
                     pass
                 else:
-                    continue
+                     continue
             except:
                 continue
         #print ecount
@@ -68,7 +68,7 @@ def tcounts():
     for tr in tbl.find_all('tr')[2:]:
 
 #tcount=0
-        #print tr
+,        #print tr
         for td in tr:
             tds = tr.find_all('td')
             (tds[0].text).encode('utf-8') 
@@ -94,7 +94,7 @@ print e
 print t
 
 
-#Have also tried this and we want the return to be tabbed one less time but the error is that list index is out of range
+#Have also tried this and we want the return to be tabbed one less time but the error is that list index is out of range but I think we have the best chance with this one
 
 def ecounttcount():
     ecount=0
