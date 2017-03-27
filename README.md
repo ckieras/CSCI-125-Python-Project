@@ -18,8 +18,11 @@ for tr in tbl.find_all('tr')[2:]:
     #print tr
     for td in tr:
         tds = tr.find_all('td')
-        print (tds[0].text, tds[1].text, tds[2].text, tds[3].text, tds[4].text)
-        print tds[3].text
+        (tds[0].text).encode('utf-8') 
+        (tds[1].text).encode('utf-8') 
+        (tds[2].text).encode('utf-8') 
+        (tds[3].text).encode('utf-8')
+        (tds[4].text).encode('utf-8')
         if tds[3].text=="E":
             ecount=ecount+1
         elif tds[3].text=="T":
