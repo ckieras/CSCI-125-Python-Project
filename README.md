@@ -48,6 +48,7 @@ def ecounts():
                     continue
             except:
                 continue
+        #print ecount
         return ecount
 def tcounts():
     tcount=0
@@ -61,8 +62,6 @@ def tcounts():
             (tds[2].text).encode('utf-8') 
             (tds[3].text).encode('utf-8')
             (tds[4].text).encode('utf-8')
-            #print (tds[0].text, tds[1].text, tds[2].text, tds[3].text, tds[4].text)
-          #  print tds[3].text
             try:
                 if tds[3].text=="T":
                     tcount=tcount+1
@@ -73,9 +72,9 @@ def tcounts():
                     continue
             except:
                 continue
-        print tcount
+        #print tcount
         return tcount
-#print ecounts()
-#print tcounts()
 e=ecounts()
 t=tcounts()
+print e
+print t
