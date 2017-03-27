@@ -91,3 +91,28 @@ e=ecounts()
 t=tcounts()
 print e
 print t
+
+
+#Have also tried this and we want the return to be tabbed one less time but the error is that list index is out of range
+def ecounttcount():
+    ecount=0
+    tcount=0
+    for tr in tbl.find_all('tr')[2:]:
+    #print tr
+        for td in tr:
+            tds = tr.find_all('td')
+            (tds[0].text).encode('utf-8') 
+            (tds[1].text).encode('utf-8') 
+            (tds[2].text).encode('utf-8') 
+            (tds[3].text).encode('utf-8')
+            (tds[4].text).encode('utf-8')
+            if tds[3].text=="E":
+                ecount=ecount+1
+            elif tds[3].text=="T":
+                tcount=tcount+1
+            else:
+                continue
+    return ecount, tcount
+
+endthr=ecounttcount()
+print endthr
