@@ -1,15 +1,25 @@
 ## CSCI-125-Python-Project
 For Python Project
-import urllib
+# urllib helps us save from URLs
+import urllib 
+#The following reads from a URL
 txt = urllib.urlopen('http://www.ecfr.gov/cgi-bin/text-idx?rgn=div8&node=50:2.0.1.1.1.2.1.1').read()
+#The following creates a new local file in your notebook
+outf = open('ecfr.txt', 'w')
+#The following writes to a file in your notebook
+outf.write(txt)
+#The following closes a file in your notebook
+outf.close()
 
+raw= str(txt)
 
 from bs4 import BeautifulSoup
 
-soup = BeautifulSoup(txt)
-tbl = soup.find_all('table')[6]
+soup = BeautifulSoup(open('ecfr.txt','r'))
+tbl = (soup.find_all('table')[6])
 for word in tbl:
-  print (tbl.get_text())
+    newtext=word.get_text()
+
 
 ecount=0
 tcount=0
