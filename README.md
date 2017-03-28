@@ -40,16 +40,23 @@ print endthr
 #ABOVE IS CORRECT DON'T DELETE
 
 
+#This makes the dictionary not including the stuff at the bottom
 newtext5 = newtext1.split('.')
 newtext6 = ' '.join(newtext5)
 newtext7 = newtext6.split(' ')
-#This is pretty close to grabbing the keys and values, still need to put into dictionary
-for i in range(len(newtext7)):
-    if newtext7[i]=="FR":
-        key=newtext7[i+1]
+#print newtext7
+d=dict()
+for a in range(len(newtext7)):
+    if newtext7[a]=='FR':
+        key=newtext7[a+1]
         key=key.split(",")[0]
         key=key.split(";")[0]
         #print key
-        value=newtext7[i+2]
+        value=newtext7[a+2]
         value=value.split(";")[0] #Kicks out extra characters at end of date
-        print value
+        #print value
+        d[key]=value
+    else:
+        continue
+print d
+        
