@@ -43,10 +43,11 @@ print endthr
 newtext5 = newtext1.split('.')
 newtext6 = ' '.join(newtext5)
 newtext7 = newtext6.split(' ')
-#This is pretty close to grabbing the keys and values, although there are some weird extra characters too
+#This is pretty close to grabbing the keys and values, still need to put into dictionary
 for i in range(len(newtext7)):
     if newtext7[i]=="FR":
         key=newtext7[i+1]
         #print key
         value=newtext7[i+2]
+        value=value.split(";")[0] #Kicks out extra characters at end of date
         print value
