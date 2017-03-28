@@ -38,3 +38,8 @@ print 'Endangered'+'\t'+'Threatened'
 print endthr
 
 #ABOVE IS CORRECT DON'T DELETE
+
+
+newtext5 = newtext1.split('.')
+newtext6 = ' '.join(newtext5)
+newtext7 = newtext6.split(' ')
