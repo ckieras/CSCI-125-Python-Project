@@ -25,10 +25,10 @@ def et():
     tcount = 0
     for letter in newtext4:
         for i in range(len(newtext4)):
-            if newtext[i] == 'E'and newtext[i+1].isdigit():
+            if newtext4[i] == 'E'and newtext4[i+1].isdigit():
                 ecount = ecount+1
             
-            elif newtext[i] == 'T' and newtext[i+1].isdigit():
+            elif newtext4[i] == 'T' and newtext4[i+1].isdigit():
                 tcount = tcount+1
         return str(ecount)+'\t'+'\t'+str(tcount)
 
