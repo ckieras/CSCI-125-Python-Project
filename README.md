@@ -47,6 +47,8 @@ newtext7 = newtext6.split(' ')
 for i in range(len(newtext7)):
     if newtext7[i]=="FR":
         key=newtext7[i+1]
+        key=key.split(",")[0]
+        key=key.split(";")[0]
         #print key
         value=newtext7[i+2]
         value=value.split(";")[0] #Kicks out extra characters at end of date
