@@ -61,13 +61,11 @@ for a in range(len(newtext7)):
 print d
 
 #Question 7
-for i in range(len(newtext7)):
-    if newtext7[i]=="FR":
-        print newtext7[i+2]
-    else:
-        continue
-I still need to figure out how to delete the ; and N at the end of some of the dates, but this prints out all the dates. 
-   
+for word in newtext:
+    newtext8=newtext.replace("FR", " ")
+    print newtext8
+#not done yet but this gets rid of FR in the table
+
 ####FOR QUESTION #9
    import urllib
 #The following reads from a URL
