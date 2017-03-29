@@ -60,6 +60,16 @@ for a in range(len(newtext7)):
         continue
 print d
 
+#exemplary status
+searchkey = raw_input("What FR value do you want to search the dictionary for? ")
+for key in d:
+    if searchkey==key:
+        print d[searchkey]
+    else:
+        print ('Sorry the key '+searchkey+' does not exist.')
+        break
+
+
 extratable=soup.find_all('p')[-2]
 extratable1=(extratable.get_text()).encode('utf-8')
 print extratable1
