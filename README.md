@@ -65,8 +65,6 @@ extratable1=(extratable.get_text()).encode('utf-8')
 print extratable1
 #print extratable1
 extratable2=extratable1.split('; ')
-#extratable3=extratable2.strip('[')
-#extratable4=extratable1.strip(']')
 #print extratable2
 for item in extratable2:
     for b in range(len(item)):
