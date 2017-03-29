@@ -30,7 +30,7 @@ def et():
             
             elif newtext4[i] == 'T' and newtext4[i+1].isdigit():
                 tcount = tcount+1
-#        return str(ecount)+'\t'+'\t'+str(tcount)
+        return str(ecount)+'\t'+'\t'+str(tcount)
 
 
 endthr=et()
@@ -44,7 +44,7 @@ print endthr
 newtext5 = newtext1.split('.')
 newtext6 = ' '.join(newtext5)
 newtext7 = newtext6.split(' ')
-'#print newtext7
+#print newtext7
 d=dict()
 for a in range(len(newtext7)):
     if newtext7[a]=='FR':
@@ -77,31 +77,23 @@ tbl = (soup.find_all('table')[0])
 newtext = tbl.get_text()
 newtext1= newtext.encode('utf-8')
 newtext2=str(newtext1)
-newtext3 = newtext2.split(' ')
+newtext5 = newtext2.replace('\n',' ')
+newtext3 = newtext5.split(' ')
 newtext4 = ''.join(newtext3)
 
-endangered = 0
-threatened = 0
-for letter in newtext4:
-    for i in range(len(newtext4)):
-        if newtext4[i] == 'Endangered':
-            endangered = endangered + 1
-        elif newtext4[i] == 'Threatened':
-            threatened = threatened + 1
-    print str(endangered-1)+'\t'+'\t'+str(threatened)
+def endthr():
+    endangered = 0
+    threatened = 0
 
+    for letter in newtext4:
+       for i in range(len(newtext4)):
+           if newtext4[i] == 'E'and newtext4[i+1] == 'n'and newtext4[i+2] == 'd'and newtext4[i+3] == 'a' and newtext4[i+4] == 'n' and newtext4[i+5] == 'g' and newtext4[i+6] == 'e' and newtext4[i+7] == 'r' :
+                endangered = endangered + 1
+           elif newtext4[i] == 'T' and newtext4[i+1] == 'h'and newtext4[i+2] == 'r' and newtext4[i+3] == 'e'and newtext4[i+4] == 'a'and newtext4[i+5] == 't':
+                threatened = threatened + 1
+       return str(endangered-6)+'\t'+'\t'+str(threatened-1)
 
-##For additional data at bottom (in progress)
+endangeredthreatened = endthr()
+print 'Endangered' + '\t' + 'Threatened'
+print endangeredthreatened
 
-extratable=soup.find_all('p')[-2]
-extratable1=(extratable.get_text()).encode('utf-8')
-#print extratable1
-extratable2=extratable1.split('; ')
-#extratable3=extratable2.strip('[')
-#extratable4=extratable1.strip(']')
-#print extratable2
-print extratable2
-for item in extratable2:
-    for b in range(len(item)):
-        if item[b]=='F' and item[b+1]=='R':
-            thing=item[b+3:]
