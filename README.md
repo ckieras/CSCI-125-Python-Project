@@ -30,7 +30,7 @@ def et():
             
             elif newtext4[i] == 'T' and newtext4[i+1].isdigit():
                 tcount = tcount+1
-        return str(ecount)+'\t'+'\t'+str(tcount)
+#        return str(ecount)+'\t'+'\t'+str(tcount)
 
 
 endthr=et()
@@ -91,3 +91,16 @@ for letter in newtext4:
     print str(endangered-1)+'\t'+'\t'+str(threatened)
 
 
+##For additional data at bottom (in progress)
+
+extratable=soup.find_all('p')[-2]
+extratable1=(extratable.get_text()).encode('utf-8')
+#print extratable1
+extratable2=extratable1.split('; ')
+#extratable3=extratable2.strip('[')
+#extratable4=extratable1.strip(']')
+#print extratable2
+print extratable2
+for item in extratable2:
+    for b in range(len(item)):
+        if item[b]==F and item[b+1]=='R':
