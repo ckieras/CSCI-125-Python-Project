@@ -44,7 +44,7 @@ print endthr
 newtext5 = newtext1.split('.')
 newtext6 = ' '.join(newtext5)
 newtext7 = newtext6.split(' ')
-#print newtext7
+'#print newtext7
 d=dict()
 for a in range(len(newtext7)):
     if newtext7[a]=='FR':
@@ -103,4 +103,4 @@ extratable2=extratable1.split('; ')
 print extratable2
 for item in extratable2:
     for b in range(len(item)):
-        if item[b]==F and item[b+1]=='R':
+        if item[b]=='F' and item[b+1]=='R':
