@@ -87,13 +87,21 @@ splityears=mashedup.split("/")
 year=2018
 while True:
     if str(year) in splityears:
+        trueyear=year
         print "A species was most recently added to the list in: "+str(year)
         break
     else: 
         year=year-1
         #print "Subtracting one"
         continue
-#Not done yet, but this finds the year.
+#Now grabbing the exact dictionary value
+for item in d.values():
+    if str(trueyear) in item:
+        truedate=item
+        print "The date this species was added is: "+str(item)
+    else:
+        continue
+#Not done yet, but this finds the date.
 
 
 
