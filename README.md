@@ -59,4 +59,35 @@ for a in range(len(newtext7)):
     else:
         continue
 print d
-        
+   
+####FOR QUESTION #9
+   import urllib
+#The following reads from a URL
+txt = urllib.urlopen('https://www.fws.gov/midwest/endangered/lists/minnesot-spp.html').read()
+#The following creates a new local file in your notebook
+outf = open('mwl.txt', 'w')
+#The following writes to a file in your notebook
+outf.write(txt)
+#The following closes a file in your notebook
+outf.close()
+
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(open('mwl.txt','r'))
+tbl = (soup.find_all('table')[0])
+newtext = tbl.get_text()
+newtext1= newtext.encode('utf-8')
+newtext2=str(newtext1)
+newtext3 = newtext2.split(' ')
+newtext4 = ''.join(newtext3)
+
+endangered = 0
+threatened = 0
+for letter in newtext4:
+    for i in range(len(newtext4)):
+        if newtext4[i] == 'Endangered':
+            endangered = endangered + 1
+        elif newtext4[i] == 'Threatened':
+            threatened = threatened + 1
+    print str(endangered-1)+'\t'+'\t'+str(threatened)
+
+
