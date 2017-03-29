@@ -78,6 +78,25 @@ for word in newtext:
     print newtext8
 #not done yet but this gets rid of FR in the table
 
+###Question 8:
+#This part is finding the most recent year
+yearlist=d.values()
+mashedup='/'.join(yearlist)
+splityears=mashedup.split("/")
+#print splityears
+year=2018
+while True:
+    if str(year) in splityears:
+        print "A species was most recently added to the list in: "+str(year)
+        break
+    else: 
+        year=year-1
+        #print "Subtracting one"
+        continue
+#Not done yet, but this finds the year.
+
+
+
 ####FOR QUESTION #9
    import urllib
 #The following reads from a URL
