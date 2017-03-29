@@ -101,7 +101,15 @@ for item in d.values():
         print "The date this species was added is: "+str(item)
     else:
         continue
-#Not done yet, but this finds the date.
+emptylist=[]
+indexofdate=newtext4.find(str(truedate))
+#print indexofdate
+for i in range(37,60):
+    emptylist.extend(newtext4[indexofdate-i])
+emptylist.reverse()
+animalstring=''.join(emptylist)
+
+print "The most recently added species is :"+ str(animalstring)
 
 
 
