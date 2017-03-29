@@ -104,3 +104,4 @@ print extratable2
 for item in extratable2:
     for b in range(len(item)):
         if item[b]=='F' and item[b+1]=='R':
+            thing=item[b+3:]
