@@ -16,10 +16,8 @@ tbl = (soup.find_all('table')[6])
 for word in tbl:
     newtext=(word.get_text()).encode('utf-8')
 newtext1=str(newtext)
-#newtext2 = newtext1.spilt('T')
 newtext3 = newtext1.split(' ')
 newtext4 = ''.join(newtext3)
-#newtext5 = list(newtext4)
 def et():
     ecount = 0
     tcount = 0
@@ -111,6 +109,11 @@ print d
 
 
 #exemplary status
+#We decided that in order to fully utilize the dictionary we would create a code
+#that allows one to search for the FR number and then recieve the corresponding date
+#If the FR number the user enters is not in the dictionary the user will
+#be able to search for another one or exit the program if they do not wish to 
+#continue searching by typing in 'done'.
 searchkey = raw_input("What FR value do you want to search the dictionary for? ")
 for key in d:
     if searchkey in d:
