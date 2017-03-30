@@ -113,11 +113,19 @@ print d
 #exemplary status
 searchkey = raw_input("What FR value do you want to search the dictionary for? ")
 for key in d:
-    if searchkey==key:
+    if searchkey in d:
         print d[searchkey]
-    else:
-        print ('Sorry the key '+searchkey+' does not exist.')
         break
+    if searchkey!=key:
+        newsearchkey = raw_input('Sorry the key '+searchkey+' does not exist. Try a different one or enter done to quit:')
+        if newsearchkey in d:
+            print d[newsearchkey]
+            break
+        elif newsearchkey == 'done':
+            break
+        else:
+            continue
+
 
 #Question 7
 for word in newtext:
