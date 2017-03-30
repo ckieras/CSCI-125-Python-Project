@@ -40,7 +40,7 @@ print endthr
 #ABOVE IS CORRECT DON'T DELETE
 
 
-#This makes the dictionary not including the stuff at the bottom
+###This makes the dictionary
 newtext5 = newtext1.split('.')
 newtext6 = ' '.join(newtext5)
 newtext7 = newtext6.split(' ')
@@ -57,8 +57,58 @@ for a in range(len(newtext7)):
         #print value
         d[key]=value
     else:
-        continue
+        continue        
+extratable=soup.find_all('p')[-2]
+extratable1=(extratable.get_text()).encode('utf-8')
+newextra=extratable1.replace('Aug. 4, 2016','8/4/2016')
+newextra1=newextra.replace(', as amended at ','; ')
+newextra2=newextra1.replace('Aug. 12, 2016','8/12/2016')
+newextra3=newextra2.replace('Aug. 26, 2016','8/26/2016')
+newextra4=newextra3.replace('Sept. 12, 2016','9/12/2016')
+newextra5=newextra4.replace('Sept. 22, 2016','9/22/2016')
+newextra6=newextra5.replace('Sept. 30, 2016','9/30/2016')
+newextra7=newextra6.replace('Oct. 5, 2016','10/5/2016')
+newextra8=newextra7.replace('Oct. 6, 2016','10/6/2016')
+newextra9=newextra8.replace('Nov. 2, 2016','11/2/2016')
+newextra10=newextra9.replace('Dec. 21, 2016','12/21/2016')
+extra=newextra10.replace('Jan 11, 2017]','1/11/2017')
+extra1=extra.replace('67214, 67856, 9/30/2016','67214, 9/30/2016; 81 FR 67856, 9/30/2016')
+finalextra=extra1.replace('68984, 69002, 10/5/2016','68984, 10/5/2016; 81 FR 69002, 10/5/2016')
+extratable2=finalextra.split('; ')
+for item in extratable2:
+    for b in range(len(item)):
+        if item[b]=='F' and item[b+1]=='R':
+            thing=item[b+3:]
+            #print thing
+            for w in range(len(thing)):
+               # print thing
+                if thing[w]==',' and thing[w+3]=='/':
+                    #print thing[0:w-1]
+                    key1=thing[0:w-1]
+                    #print key1
+                    value1=thing[w+2:]
+                    #print value1
+                    d[key1]=value1
+                elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='0':
+                    key2=thing[0:w]
+                    #print key2
+                    value2=thing[w+2:]
+                    d[key2]=value2
+                elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='1':
+                    key3=thing[0:w]
+                    #print key3
+                    value3=thing[w+2:]
+                    #print value3
+                    d[key3]=value3
+                elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='2':
+                    key4=thing[0:w]
+                    #print key4
+                    value4=thing[w+2:]
+                    d[key4]=value4
+                else:
+                    continue 
 print d
+
 
 #exemplary status
 searchkey = raw_input("What FR value do you want to search the dictionary for? ")
@@ -68,19 +118,6 @@ for key in d:
     else:
         print ('Sorry the key '+searchkey+' does not exist.')
         break
-
-
-extratable=soup.find_all('p')[-2]
-extratable1=(extratable.get_text()).encode('utf-8')
-print extratable1
-#print extratable1
-extratable2=extratable1.split('; ')
-#print extratable2
-for item in extratable2:
-    for b in range(len(item)):
-        if item[b]=='F' and item[b+1]=='R':
-            thing=item[b+3:]
-            print thing
 
 #Question 7
 for word in newtext:
