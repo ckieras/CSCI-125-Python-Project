@@ -45,8 +45,7 @@ newtext7 = newtext6.split(' ')
 d=dict()
 for a in range(len(newtext7)):
     if newtext7[a]=='FR':
-        key=newtext7[a+1]
-        key=key.split(",")[0]
+        key=newtext7[a+1]        key=key.split(",")[0]
         key=key.split(";")[0]
         value=newtext7[a+2]
         value=value.split(";")[0] #Kicks out extra characters at end of date
@@ -82,24 +81,24 @@ for item in extratable2:
                   key1=thing[0:w-1]
                   value1=thing[w+2:]
                   d[key1]=value1
-                elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='0':
-                    key2=thing[0:w]
+               elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='0':
+                   key2=thing[0:w]
                     
-                    value2=thing[w+2:]
-                    d[key2]=value2
-                elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='1':
-                    key3=thing[0:w]
+                   value2=thing[w+2:]
+                   d[key2]=value2
+               elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='1':
+                   key3=thing[0:w]
                     
-                    value3=thing[w+2:]
+                   value3=thing[w+2:]
                     
                     d[key3]=value3
-                elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='2':
-                    key4=thing[0:w]
+               elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='2':
+                   key4=thing[0:w]
                     
-                    value4=thing[w+2:]
-                    d[key4]=value4
-                else:
-                    continue 
+                   value4=thing[w+2:]
+                   d[key4]=value4
+               else:
+                   continue 
 print d
 
 
