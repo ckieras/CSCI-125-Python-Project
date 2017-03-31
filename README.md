@@ -1,3 +1,4 @@
+
 #Team ACED: Emily Frances Leiter Olson, Alexandra Rae Rosatti, Corinne Kieras, Daisy Richmond
 import urllib
 #The following reads from a URL
@@ -16,6 +17,7 @@ soup = BeautifulSoup(open('ecfr.txt','r'))
 tbl = (soup.find_all('table')[6])
 for word in tbl:
     newtext=(word.get_text()).encode('utf-8')
+print newtext
 newtext1=str(newtext)
 newtext3 = newtext1.split(' ')
 newtext4 = ''.join(newtext3)
