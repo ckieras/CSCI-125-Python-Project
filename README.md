@@ -1,3 +1,4 @@
+#Team ACED: Emily Frances Leiter Olson, Alexandra Rae Rosatti, Corinne Kieras, Daisy Richmond
 import urllib
 #The following reads from a URL
 txt = urllib.urlopen('http://www.ecfr.gov/cgi-bin/text-idx?rgn=div8&node=50:2.0.1.1.1.2.1.1').read()
@@ -10,7 +11,7 @@ outf.close()
 
 raw= str(txt)
 from bs4 import BeautifulSoup
-
+#scrapes the text on the table from the website and puts it into a workable format
 soup = BeautifulSoup(open('ecfr.txt','r'))
 tbl = (soup.find_all('table')[6])
 for word in tbl:
@@ -18,6 +19,7 @@ for word in tbl:
 newtext1=str(newtext)
 newtext3 = newtext1.split(' ')
 newtext4 = ''.join(newtext3)
+#this function counts the number of endangered species and threatened ones and returns the total
 def et():
     ecount = 0
     tcount = 0
@@ -35,8 +37,6 @@ endthr=et()
 print 'Endangered'+'\t'+'Threatened'
 print endthr
 
-#ABOVE IS CORRECT DON'T DELETE
-
 
 ###This makes the dictionary
 newtext5 = newtext1.split('.')
@@ -51,7 +51,8 @@ for a in range(len(newtext7)):
         value=value.split(";")[0] #Kicks out extra characters at end of date
         d[key]=value
     else:
-        continue        
+        continue   
+#scrapes the information at the bottom and puts it into a consistent date format
 extratable=soup.find_all('p')[-2]
 extratable1=(extratable.get_text()).encode('utf-8')
 newextra=extratable1.replace('Aug. 4, 2016','8/4/2016')
@@ -69,6 +70,7 @@ extra=newextra10.replace('Jan 11, 2017]','1/11/2017')
 extra1=extra.replace('67214, 67856, 9/30/2016','67214, 9/30/2016; 81 FR 67856, 9/30/2016')
 finalextra=extra1.replace('68984, 69002, 10/5/2016','68984, 10/5/2016; 81 FR 69002, 10/5/2016')
 extratable2=finalextra.split('; ')
+#this adds the information at the bottom of the table to the dictionary
 for item in extratable2:
     for b in range(len(item)):
         if item[b]=='F' and item[b+1]=='R':
@@ -175,7 +177,7 @@ outf = open('mwl.txt', 'w')
 outf.write(txt)
 #The following closes a file in your notebook
 outf.close()
-
+#imports the new information from the new website and puts it into a workable format
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(open('mwl.txt','r'))
 tbl = (soup.find_all('table')[0])
@@ -185,7 +187,7 @@ newtext2=str(newtext1)
 newtext5 = newtext2.replace('\n',' ')
 newtext3 = newtext5.split(' ')
 newtext4 = ''.join(newtext3)
-
+#this function adds up the endangered and threatened species from the Minnesota website and prints the totals
 def endthr():
     endangered = 0
     threatened = 0
