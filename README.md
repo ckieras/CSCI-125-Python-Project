@@ -197,9 +197,9 @@ def endthr():
                 endangered = endangered + 1
            elif newtext4[i] == 'T' and newtext4[i+1] == 'h'and newtext4[i+2] == 'r' and newtext4[i+3] == 'e'and newtext4[i+4] == 'a'and newtext4[i+5] == 't':
                 threatened = threatened + 1
-       return str(endangered-6)+'\t'+'\t'+str(threatened-1)
+       return str(endangered-6)+'\t'+'\t' + '\t'+str(threatened-1)
 
 endangeredthreatened = endthr()
-print 'Endangered' + '\t' + 'Threatened'
+print 'Endangered ' + 'Threatened'
 print endangeredthreatened
 
