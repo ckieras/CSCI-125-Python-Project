@@ -42,17 +42,14 @@ print endthr
 newtext5 = newtext1.split('.')
 newtext6 = ' '.join(newtext5)
 newtext7 = newtext6.split(' ')
-#print newtext7
 d=dict()
 for a in range(len(newtext7)):
     if newtext7[a]=='FR':
         key=newtext7[a+1]
         key=key.split(",")[0]
         key=key.split(";")[0]
-        #print key
         value=newtext7[a+2]
         value=value.split(";")[0] #Kicks out extra characters at end of date
-        #print value
         d[key]=value
     else:
         continue        
@@ -77,30 +74,28 @@ for item in extratable2:
     for b in range(len(item)):
         if item[b]=='F' and item[b+1]=='R':
             thing=item[b+3:]
-            #print thing
+            
             for w in range(len(thing)):
-               # print thing
-                if thing[w]==',' and thing[w+3]=='/':
-                    #print thing[0:w-1]
-                    key1=thing[0:w-1]
-                    #print key1
-                    value1=thing[w+2:]
-                    #print value1
-                    d[key1]=value1
+             
+               if thing[w]==',' and thing[w+3]=='/':
+                    
+                  key1=thing[0:w-1]
+                  value1=thing[w+2:]
+                  d[key1]=value1
                 elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='0':
                     key2=thing[0:w]
-                    #print key2
+                    
                     value2=thing[w+2:]
                     d[key2]=value2
                 elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='1':
                     key3=thing[0:w]
-                    #print key3
+                    
                     value3=thing[w+2:]
-                    #print value3
+                    
                     d[key3]=value3
                 elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='2':
                     key4=thing[0:w]
-                    #print key4
+                    
                     value4=thing[w+2:]
                     d[key4]=value4
                 else:
