@@ -63,8 +63,7 @@ newextra4=newextra3.replace('Sept. 12, 2016','9/12/2016')
 newextra5=newextra4.replace('Sept. 22, 2016','9/22/2016')
 newextra6=newextra5.replace('Sept. 30, 2016','9/30/2016')
 newextra7=newextra6.replace('Oct. 5, 2016','10/5/2016')
-newextra8=newextra7.replace('Oct. 6, 2016','10/6/2016')
-newextra9=newextra8.replace('Nov. 2, 2016','11/2/2016')
+newextra8=newextra7.replace('Oct. 6, 2016','10/6/2016')newextra9=newextra8.replace('Nov. 2, 2016','11/2/2016')
 newextra10=newextra9.replace('Dec. 21, 2016','12/21/2016')
 extra=newextra10.replace('Jan 11, 2017]','1/11/2017')
 extra1=extra.replace('67214, 67856, 9/30/2016','67214, 9/30/2016; 81 FR 67856, 9/30/2016')
@@ -93,7 +92,7 @@ for item in extratable2:
                     
                    value3=thing[w+2:]
                     
-                    d[key3]=value3
+                   d[key3]=value3
                elif thing[w]==',' and thing[w+2]=='1' and thing[w+3]=='2':
                    key4=thing[0:w]
                     
