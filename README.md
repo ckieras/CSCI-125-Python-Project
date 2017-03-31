@@ -154,6 +154,7 @@ for item in d.values():
     if str(trueyear) in item:
         truedate=item
         print "The date this species was added is: "+str(item)
+        break
     else:
         continue
 emptylist=[]
