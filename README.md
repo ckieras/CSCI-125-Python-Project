@@ -203,3 +203,27 @@ endangeredthreatened = endthr()
 print 'Endangered' + '\t' + 'Threatened'
 print endangeredthreatened
 
+#7 Random work
+#for i in range(len(newtext7)):
+ #   if newtext7[i]=="FR":
+  #      print newtext7[i+2]
+   # else:
+    #    continue
+    
+#print newtext
+
+for word in newtext:
+    newtext8=newtext.replace("FR", "")
+    #print newtext8
+newtext9=newtext8.split(" ")
+print newtext9
+#for i in range(len(newtext9)):
+ #   if newtext9[i]=="FR":
+  #      newtext9[i+1]==""
+   # print newtext9
+    
+#for i in range(len(newtext7)):
+ #       if newtext7[i]=="FR":
+  #          newtext9=newtext8.replace(newtext7[i+1], "")
+   #     else:
+    #        continue
