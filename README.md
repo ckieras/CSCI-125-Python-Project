@@ -128,15 +128,14 @@ for key in d:
 
 
 #Question 7
+newtext10=newtext6.split(" ")
 i=0
 lennewtext10=len(newtext10)
 while i<lennewtext10:
-    #print i, newtext10[i]
     if newtext10[i]=='FR':
         newtext10.remove(newtext10[i+1])
         newtext10.remove(newtext10[i])
         lennewtext10=lennewtext10-2
-        #i=i+1
     else:
         i=i+1
         continue
