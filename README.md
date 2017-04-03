@@ -1,10 +1,5 @@
 
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
 
-This is a temporary script file.
-"""
 #Team ACED: Emily Frances Leiter Olson, Alexandra Rae Rosatti, Corinne Kieras, Daisy Richmond
 import urllib
 #The following reads from a URL
