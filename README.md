@@ -128,10 +128,19 @@ for key in d:
 
 
 #Question 7
-for word in newtext:
-    newtext8=newtext.replace("FR", " ")
-    print newtext8
-#not done yet but this gets rid of FR in the table
+i=0
+lennewtext10=len(newtext10)
+while i<lennewtext10:
+    #print i, newtext10[i]
+    if newtext10[i]=='FR':
+        newtext10.remove(newtext10[i+1])
+        newtext10.remove(newtext10[i])
+        lennewtext10=lennewtext10-2
+        #i=i+1
+    else:
+        i=i+1
+        continue
+print newtext10
 
 ###Question 8:
 #This part is finding the most recent year
