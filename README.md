@@ -1,4 +1,10 @@
 
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
 #Team ACED: Emily Frances Leiter Olson, Alexandra Rae Rosatti, Corinne Kieras, Daisy Richmond
 import urllib
 #The following reads from a URL
@@ -47,7 +53,8 @@ newtext7 = newtext6.split(' ')
 d=dict()
 for a in range(len(newtext7)):
     if newtext7[a]=='FR':
-        key=newtext7[a+1]        key=key.split(",")[0]
+        key=newtext7[a+1]        
+        key=key.split(",")[0]
         key=key.split(";")[0]
         value=newtext7[a+2]
         value=value.split(";")[0] #Kicks out extra characters at end of date
@@ -65,7 +72,8 @@ newextra4=newextra3.replace('Sept. 12, 2016','9/12/2016')
 newextra5=newextra4.replace('Sept. 22, 2016','9/22/2016')
 newextra6=newextra5.replace('Sept. 30, 2016','9/30/2016')
 newextra7=newextra6.replace('Oct. 5, 2016','10/5/2016')
-newextra8=newextra7.replace('Oct. 6, 2016','10/6/2016')newextra9=newextra8.replace('Nov. 2, 2016','11/2/2016')
+newextra8=newextra7.replace('Oct. 6, 2016','10/6/2016')
+newextra9=newextra8.replace('Nov. 2, 2016','11/2/2016')
 newextra10=newextra9.replace('Dec. 21, 2016','12/21/2016')
 extra=newextra10.replace('Jan 11, 2017]','1/11/2017')
 extra1=extra.replace('67214, 67856, 9/30/2016','67214, 9/30/2016; 81 FR 67856, 9/30/2016')
@@ -178,7 +186,7 @@ print "The most recently added species is :"+ str(animalstring)
 
 
 ####FOR QUESTION #9
-   import urllib
+import urllib
 #The following reads from a URL
 txt = urllib.urlopen('https://www.fws.gov/midwest/endangered/lists/minnesot-spp.html').read()
 #The following creates a new local file in your notebook
@@ -213,4 +221,5 @@ def endthr():
 endangeredthreatened = endthr()
 print 'Endangered ' + 'Threatened'
 print endangeredthreatened
+
 
